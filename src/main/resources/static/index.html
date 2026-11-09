@@ -1,81 +1,258 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Space</title>
+
     <link rel="stylesheet" href="/styling.css">
     <script src="/script.js" defer></script>
 </head>
 
 <body>
 
+    <!-- ========================= -->
     <!-- LOGIN PAGE -->
+    <!-- ========================= -->
+
     <main id="loginScreen" class="login-screen">
+
         <div class="login-card">
+
             <div class="brand-logo">✳</div>
-            <p class="eyebrow">WELCOME TO YOUR WORKSPACE</p>
+
+            <p class="eyebrow">
+                WELCOME TO YOUR WORKSPACE
+            </p>
 
             <h1>Student <span>Space.</span></h1>
+
             <p class="login-description">
                 A little less admin, a little more learning.
                 Sign in to manage your students.
             </p>
 
             <form id="loginForm" class="form-stack">
+
                 <label for="loginEmail">Email</label>
-                <input id="loginEmail" type="email"
-                       placeholder="you@school.edu" required>
+
+                <input
+                    id="loginEmail"
+                    type="email"
+                    placeholder="you@school.edu"
+                    autocomplete="email"
+                    required
+                >
 
                 <label for="loginPassword">Password</label>
-                <input id="loginPassword" type="password"
-                       placeholder="Your password" required>
 
-                <p id="loginError" class="error-message"
-                   role="alert" hidden></p>
+                <input
+                    id="loginPassword"
+                    type="password"
+                    placeholder="Your password"
+                    autocomplete="current-password"
+                    required
+                >
 
-                <button id="loginButton" type="submit"
-                        class="button button-primary button-full">
+                <p
+                    id="loginError"
+                    class="error-message"
+                    role="alert"
+                    hidden>
+                </p>
+
+                <button
+                    id="loginButton"
+                    type="submit"
+                    class="button button-primary button-full">
                     Sign in →
                 </button>
+
             </form>
+
+            <div class="signup-prompt">
+
+                <p>New to Student Space?</p>
+
+                <button
+                    id="showSignupButton"
+                    type="button"
+                    class="button button-subtle button-full">
+                    Create an account ✨
+                </button>
+
+            </div>
 
             <p class="login-footer">
                 Made for a brighter school day ✦
             </p>
+
         </div>
+
     </main>
 
 
+    <!-- ========================= -->
+    <!-- SIGN UP PAGE -->
+    <!-- ========================= -->
+
+    <main id="signupScreen" class="login-screen" hidden>
+
+        <div class="login-card">
+
+            <div class="brand-logo">✳</div>
+
+            <p class="eyebrow">
+                JOIN STUDENT SPACE
+            </p>
+
+            <h1>Create your <span>account.</span></h1>
+
+            <p class="login-description">
+                Your learning space starts here.
+                Create an account and join our community!
+            </p>
+
+            <form id="signupForm" class="form-stack">
+
+                <label for="signupEmail">
+                    Email address
+                </label>
+
+                <input
+                    id="signupEmail"
+                    type="email"
+                    placeholder="you@school.edu"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="signupPassword">
+                    Password
+                </label>
+
+                <input
+                    id="signupPassword"
+                    type="password"
+                    placeholder="At least 8 characters"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
+
+                <label for="signupConfirmPassword">
+                    Confirm password
+                </label>
+
+                <input
+                    id="signupConfirmPassword"
+                    type="password"
+                    placeholder="Repeat your password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
+
+                <p
+                    id="signupError"
+                    class="error-message"
+                    role="alert"
+                    hidden>
+                </p>
+
+                <button
+                    id="signupButton"
+                    type="submit"
+                    class="button button-primary button-full">
+                    Create account →
+                </button>
+
+            </form>
+
+            <!-- Registration success -->
+            <div
+                id="signupSuccess"
+                class="signup-success"
+                role="status"
+                hidden>
+
+                <span>🌸</span>
+
+                <h2>You're almost there!</h2>
+
+                <p>
+                    Your registration has been submitted.
+                    An administrator must approve your
+                    account before you can sign in.
+                </p>
+
+            </div>
+
+            <div class="signup-prompt">
+
+                <p>Already have an account?</p>
+
+                <button
+                    id="backToLoginButton"
+                    type="button"
+                    class="button button-subtle button-full">
+                    ← Back to Sign In
+                </button>
+
+            </div>
+
+            <p class="login-footer">
+                Student Space ✦ Made for learning
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
     <!-- DASHBOARD -->
+    <!-- ========================= -->
+
     <div id="dashboard" class="dashboard" hidden>
 
         <!-- HEADER -->
+
         <header class="topbar">
+
             <div class="wordmark">
                 <span class="mark">✳</span>
                 student<span class="wordmark-accent">space</span>
             </div>
 
             <div class="topbar-actions">
+
                 <span id="userRole" class="role-pill">
                     School team
                 </span>
 
-                <button id="logoutButton"
-                        class="button button-subtle">
+                <button
+                    id="logoutButton"
+                    class="button button-subtle">
                     Log out ↗
                 </button>
+
             </div>
+
         </header>
 
 
         <main class="main-content">
 
-            <!-- WELCOME -->
+            <!-- WELCOME BANNER -->
+
             <section class="welcome-panel">
+
                 <div>
+
                     <span class="welcome-tag">
                         ✦ YOUR CLASSROOM HUB
                     </span>
@@ -90,191 +267,328 @@
                         all in one lovely place.
                     </p>
 
-                    <button id="heroAddButton"
-                            class="button button-light">
+                    <button
+                        id="heroAddButton"
+                        class="button button-light">
                         + Add student
                     </button>
+
                 </div>
 
                 <div class="hero-art" aria-hidden="true">
+
                     <span class="art-sun">☀</span>
                     <span class="art-book">📚</span>
                     <span class="art-star">✦</span>
+
                 </div>
+
             </section>
 
 
             <!-- STATISTICS -->
+
             <section class="summary-strip">
 
                 <div class="summary-card">
-                    <div class="summary-icon purple">🎓</div>
+
+                    <div class="summary-icon purple">
+                        🎓
+                    </div>
+
                     <div>
+
                         <span class="small-label">
                             TOTAL STUDENTS
                         </span>
+
                         <strong id="studentCount">—</strong>
+
                     </div>
+
                 </div>
 
+
                 <div class="summary-card">
-                    <div class="summary-icon peach">✦</div>
+
+                    <div class="summary-icon peach">
+                        ✦
+                    </div>
+
                     <div>
+
                         <span class="small-label">
                             YOUR ACCESS
                         </span>
+
                         <strong id="accessText">—</strong>
+
                     </div>
+
                 </div>
 
+
                 <div class="summary-note">
+
                     <span class="note-sparkle">✳</span>
+
                     <div>
-                        <strong>One step at a time!</strong>
+
+                        <strong>
+                            One step at a time!
+                        </strong>
+
                         <p>
                             A little organisation goes a long way.
                         </p>
+
                     </div>
+
                 </div>
 
             </section>
 
 
-            <!-- STUDENTS -->
+            <!-- STUDENTS SECTION -->
+
             <section class="student-section">
 
                 <div class="section-heading">
+
                     <div>
-                        <p class="eyebrow">YOUR DIRECTORY</p>
-                        <h2>Students <span>✳</span></h2>
+
+                        <p class="eyebrow">
+                            YOUR DIRECTORY
+                        </p>
+
+                        <h2>
+                            Students <span>✳</span>
+                        </h2>
+
                         <p>
                             Browse your class, find someone,
                             or add a new student.
                         </p>
+
                     </div>
 
-                    <button id="addStudentButton"
-                            class="button button-primary">
+                    <button
+                        id="addStudentButton"
+                        class="button button-primary">
                         + Add student
                     </button>
+
                 </div>
 
 
-                <!-- STUDENTS TABLE -->
+                <!-- STUDENT TABLE -->
+
                 <div class="table-panel">
 
                     <div class="table-toolbar">
+
                         <label class="search-field">
+
                             <span>⌕</span>
-                            <input id="searchInput"
-                                   type="search"
-                                   placeholder="Search students...">
+
+                            <input
+                                id="searchInput"
+                                type="search"
+                                placeholder="Search students..."
+                            >
+
                         </label>
 
                         <span id="listLabel" class="list-label">
                             Students
                         </span>
+
                     </div>
 
+
                     <div class="table-scroll">
+
                         <table>
+
                             <thead>
+
                                 <tr>
                                     <th>STUDENT</th>
                                     <th>STUDENT ID</th>
                                     <th>ACTIONS</th>
                                 </tr>
+
                             </thead>
 
                             <tbody id="studentRows">
-                                <!-- JS adds students here -->
+                                <!-- JavaScript adds students here -->
                             </tbody>
+
                         </table>
+
                     </div>
 
-                    <div id="emptyState" class="empty-state" hidden>
+
+                    <div
+                        id="emptyState"
+                        class="empty-state"
+                        hidden>
+
                         <span>🌼</span>
+
                         <p>No students found.</p>
+
                         <small>
                             Try another search or add a student.
                         </small>
+
                     </div>
 
                 </div>
+
             </section>
+
+
+            <!-- FOOTER -->
 
             <footer class="footer">
                 ✦ Student Space · Made for learning
             </footer>
 
         </main>
+
     </div>
 
 
-    <!-- ADD / EDIT STUDENT WINDOW -->
+    <!-- ========================= -->
+    <!-- ADD / EDIT STUDENT MODAL -->
+    <!-- ========================= -->
+
     <dialog id="studentDialog" class="student-dialog">
 
         <form id="studentForm" class="dialog-content">
 
             <div class="dialog-heading">
+
                 <div>
-                    <p class="eyebrow">STUDENT DETAILS</p>
-                    <h2 id="dialogTitle">Add a student</h2>
+
+                    <p class="eyebrow">
+                        STUDENT DETAILS
+                    </p>
+
+                    <h2 id="dialogTitle">
+                        Add a student
+                    </h2>
+
                 </div>
 
-                <button id="closeDialog"
-                        type="button"
-                        class="close-dialog">
+                <button
+                    id="closeDialog"
+                    type="button"
+                    class="close-dialog">
                     ×
                 </button>
+
             </div>
+
 
             <p id="editNote" class="edit-note" hidden>
                 Only contact details can be edited.
             </p>
 
+
             <div class="fields-grid">
+
                 <div>
-                    <label for="studentName">First name</label>
-                    <input id="studentName" required>
+
+                    <label for="studentName">
+                        First name
+                    </label>
+
+                    <input
+                        id="studentName"
+                        required
+                    >
+
                 </div>
 
                 <div>
-                    <label for="studentSurname">Last name</label>
-                    <input id="studentSurname" required>
+
+                    <label for="studentSurname">
+                        Last name
+                    </label>
+
+                    <input
+                        id="studentSurname"
+                        required
+                    >
+
                 </div>
+
             </div>
 
-            <label for="studentPhone">Phone number</label>
-            <input id="studentPhone" type="tel"
-                   placeholder="Optional">
 
-            <label for="studentEmail">Email</label>
-            <input id="studentEmail" type="email"
-                   placeholder="Optional">
+            <label for="studentPhone">
+                Phone number
+            </label>
 
-            <p id="formError" class="error-message"
-               role="alert" hidden></p>
+            <input
+                id="studentPhone"
+                type="tel"
+                placeholder="Optional"
+            >
+
+
+            <label for="studentEmail">
+                Email
+            </label>
+
+            <input
+                id="studentEmail"
+                type="email"
+                placeholder="Optional"
+            >
+
+
+            <p
+                id="formError"
+                class="error-message"
+                role="alert"
+                hidden>
+            </p>
+
 
             <div class="dialog-buttons">
-                <button id="cancelDialog"
-                        class="button button-subtle"
-                        type="button">
+
+                <button
+                    id="cancelDialog"
+                    class="button button-subtle"
+                    type="button">
                     Cancel
                 </button>
 
-                <button id="saveStudentButton"
-                        class="button button-primary"
-                        type="submit">
+                <button
+                    id="saveStudentButton"
+                    class="button button-primary"
+                    type="submit">
                     Save student
                 </button>
+
             </div>
 
         </form>
+
     </dialog>
 
-    <div id="toast" class="toast"
-         role="status" hidden></div>
+
+    <!-- NOTIFICATIONS -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        hidden>
+    </div>
 
 </body>
 </html>
