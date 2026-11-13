@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserService {
         User existedUser = findByEmail(userRequest.getEmail());
         existedUser.setEmail(userRequest.getEmail());
         existedUser.setRoles(userRequest.getRoles());
-        return null;
+        return userMapper.toResponse(userRepository.save(existedUser));
     }
 
     @Override
